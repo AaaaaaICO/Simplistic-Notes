@@ -1,0 +1,161 @@
+[gd_scene load_steps=3 format=3 uid="uid://coadyfw5s3yi8"]
+
+[ext_resource type="Texture2D" uid="uid://ct30ou38833nt" path="res://Sprites/GithubLogo.png" id="1_bbjjd"]
+[ext_resource type="Script" path="res://Scripts/ProfileSelectManager.gd" id="1_qt8l7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.196078, 0.219608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt8l7")
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 265
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.57
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/VSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/VSplitContainer/VBoxContainer/HBoxContainer/Control/CenterContainer"]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_bbjjd")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="AD_CreateFolder" type="AcceptDialog" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer"]
+title = "Create Folder"
+initial_position = 1
+size = Vector2i(150, 95)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder/VBoxContainer/MarginContainer"]
+layout_mode = 2
+placeholder_text = "FOLDER NAME"
+
+[node name="Btn_Create Folder" type="Button" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Create folder"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VSplitContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VSplitContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HBoxContainer2/MarginContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.14
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Btn_Exit" type="Button" parent="VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.864483, 0.223867, 0.224987, 1)
+theme_override_font_sizes/font_size = 60
+text = "Exit
+"
+
+[connection signal="dragged" from="VBoxContainer/VSplitContainer" to="VBoxContainer" method="_on_v_split_container_Logo_dragged"]
+[connection signal="canceled" from="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder" to="VBoxContainer" method="_on_ad_create_folder_canceled"]
+[connection signal="confirmed" from="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder" to="VBoxContainer" method="_on_ad_create_folder_confirmed"]
+[connection signal="pressed" from="VBoxContainer/VSplitContainer/VBoxContainer/MarginContainer/Btn_Create Folder" to="VBoxContainer" method="_on_btn_create_folder_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/MarginContainer/Btn_Exit" to="VBoxContainer" method="_on_btn_exit_pressed"]

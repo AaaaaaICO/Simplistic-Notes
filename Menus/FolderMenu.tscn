@@ -1,0 +1,176 @@
+[gd_scene load_steps=2 format=3 uid="uid://t6iw8qeu8jhv"]
+
+[ext_resource type="Script" path="res://Scripts/FolderMenuManager.gd" id="1_g1tkw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g1tkw")
+metadata/_edit_use_anchors_ = true
+
+[node name="AD_FolderName" type="AcceptDialog" parent="."]
+title = "Edit Folder"
+initial_position = 1
+size = Vector2i(410, 100)
+ok_button_text = "Edit"
+
+[node name="TE_ProfileName" type="TextEdit" parent="AD_FolderName"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 402.0
+offset_bottom = 51.0
+placeholder_text = "Folder name"
+
+[node name="AD_NoteMaker" type="AcceptDialog" parent="."]
+title = "New note"
+initial_position = 1
+size = Vector2i(250, 300)
+ok_button_text = "Add"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AD_NoteMaker"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AD_NoteMaker/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AD_NoteMaker/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSplitContainer" type="VSplitContainer" parent="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 95
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = -55
+
+[node name="TE_NoteName" type="TextEdit" parent="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer/VSplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Note  Name"
+
+[node name="TE_NoteContent" type="TextEdit" parent="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer/VSplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Note Content"
+wrap_mode = 1
+
+[node name="CheckBox" type="CheckBox" parent="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Pin"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.196078, 0.219608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = -395
+dragger_visibility = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Btn_EditFolder" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.14
+theme_override_font_sizes/font_size = 30
+text = "Edit"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 180
+
+[node name="Btn_NewNote" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 60
+text = "New note"
+
+[node name="Btn_Back" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer2/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[connection signal="canceled" from="AD_FolderName" to="." method="_on_ad_folder_name_canceled"]
+[connection signal="confirmed" from="AD_FolderName" to="." method="_on_ad_folder_name_confirmed"]
+[connection signal="canceled" from="AD_NoteMaker" to="." method="_on_ad_note_maker_canceled"]
+[connection signal="confirmed" from="AD_NoteMaker" to="." method="_on_ad_note_maker_confirmed"]
+[connection signal="toggled" from="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/Btn_EditFolder" to="." method="_on_btn_editFolder_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer/Btn_NewNote" to="." method="_on_btn_new_note_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer/Btn_Back" to="." method="_on_btn_back_pressed"]

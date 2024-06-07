@@ -11,20 +11,26 @@ config_version=5
 [application]
 
 config/name="Simplistic Notes"
-run/main_scene="res://Menus/ProfileSelect.tscn"
+config/description="A simple notes app with no distraction or bloatware"
+run/main_scene="res://Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.0980392, 0.196078, 0.219608, 1)
+boot_splash/image="res://Other/Icon.png"
+config/icon="res://Other/Icon.png"
 
 [autoload]
 
+SceneTransition="*res://Prefabs/Scene_Transition.tscn"
 Global="*res://Scripts/Global.gd"
 
 [display]
 
 window/size/viewport_width=600
 window/size/viewport_height=800
+window/subwindows/embed_subwindows=false
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

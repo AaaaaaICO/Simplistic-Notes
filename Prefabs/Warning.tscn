@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bmi7hm0pl0hxy"]
+
+[node name="AcceptDialog" type="AcceptDialog"]
+initial_position = 1
+size = Vector2i(105, 100)
+visible = true
+dialog_text = "[WARNING]"
