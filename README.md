@@ -1,7 +1,7 @@
 ## Fetures
 ```
 Create multiple folders and fill with notes about anything.
-Infinitely resizeable widow and unlimited makeable folders and notes
+Infinitely resizable widow and unlimited makeable folders and notes
 ```
 ### To Add
 
