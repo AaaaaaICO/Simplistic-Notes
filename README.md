@@ -5,7 +5,7 @@ Infinitely resizable widow and unlimited makeable folders and notes
 ```
 ### To Add
 
-> Background Settings
+> Background colour settings
 >
 > Better Ui
 >
