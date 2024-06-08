@@ -119,34 +119,32 @@ dragger_visibility = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Btn_EditFolder" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
+[node name="HSplitContainer2" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.14
+split_offset = -155
+
+[node name="Btn_Back" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
-text = "Edit"
+text = "Back"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
 
-[node name="HSplitContainer" type="HSplitContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-split_offset = 180
-
-[node name="Btn_NewNote" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer"]
+[node name="Btn_NewNote" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 60
 text = "New note"
 
-[node name="Btn_Back" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer"]
+[node name="Btn_EditFolder" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
-text = "Back"
+text = "Settings"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/VSplitContainer"]
 clip_contents = true
@@ -171,6 +169,6 @@ theme_override_constants/separation = 5
 [connection signal="canceled" from="AD_NoteMaker" to="." method="_on_ad_note_maker_canceled"]
 [connection signal="confirmed" from="AD_NoteMaker" to="." method="_on_ad_note_maker_confirmed"]
 [connection signal="toggled" from="AD_NoteMaker/VBoxContainer/ScrollContainer/VBoxContainer/VSplitContainer/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/Btn_EditFolder" to="." method="_on_btn_editFolder_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer/Btn_NewNote" to="." method="_on_btn_new_note_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/MarginContainer/HSplitContainer/Btn_Back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2/Btn_Back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2/HSplitContainer/Btn_NewNote" to="." method="_on_btn_new_note_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VSplitContainer/HBoxContainer/HSplitContainer2/HSplitContainer/Btn_EditFolder" to="." method="_on_btn_editFolder_pressed"]

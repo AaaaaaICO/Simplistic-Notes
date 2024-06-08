@@ -39,9 +39,10 @@ func _on_btn_pin_pressed():
 
 
 func _on_btn_delete_pressed():
-	Global.LoadedProfile["Notes"].remove_at(noteIndex)
-	Global.RefreshNoteList = true
-	Global.Save(Global.LoadedProfile["ProfileName"])
+	if(!Global.LoadedProfile["Notes"][noteIndex]["Pinned"]):
+		Global.LoadedProfile["Notes"].remove_at(noteIndex)
+		Global.RefreshNoteList = true
+		Global.Save(Global.LoadedProfile["ProfileName"])
 
 func EditNote(Name, Date, Content, Pinned):
 	var editedNote = {

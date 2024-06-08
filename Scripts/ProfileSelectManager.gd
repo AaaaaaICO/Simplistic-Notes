@@ -5,6 +5,7 @@ extends VBoxContainer
 @onready var AD_FolderName = $VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder/VBoxContainer/MarginContainer/TextEdit
 @onready var ADCreateFolder = $VSplitContainer/VBoxContainer/MarginContainer/AD_CreateFolder
 func _ready():
+	Global.CheckForFirstLoad()
 	FillProfiles()
 
 func _process(delta):
