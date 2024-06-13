@@ -16,7 +16,7 @@ Infinitely resizable widow and unlimited makeable folders and notes
 #### Example
 
 ![alt text](https://github.com/AaaaaaICO/Simplistic-Notes/blob/main/Other/Examples/Tut.PNG "View Running")
-
+### Resized
 ![alt text](https://github.com/AaaaaaICO/Simplistic-Notes/blob/main/Other/Examples/Resizeable.PNG "Resizeable")
 
 
